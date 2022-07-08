@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from '../Book/Book';
+import AddBookForm from '../AddBookForm/AddBookForm';
 
 const Books = () => {
   const books = [
@@ -41,6 +42,8 @@ const Books = () => {
         bookAuthor={books[2].author}
         bookCategory={books[2].category}
       />
+
+      <AddBookForm />
     </div>
   );
 };
