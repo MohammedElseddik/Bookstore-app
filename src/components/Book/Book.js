@@ -7,17 +7,17 @@ const Book = (props) => {
       <span>{bookCategory}</span>
       <h3>{bookTitle}</h3>
       <span>{bookAuthor}</span>
-      <ul className="buttons">
-        <li className="btn">
+      <div className="buttons">
+        <div className="btn">
           <button type="button">Comments</button>
-        </li>
-        <li className="btn">
+        </div>
+        <div className="btn">
           <button type="button">Remove</button>
-        </li>
-        <li className="btn">
+        </div>
+        <div className="btn">
           <button type="button">Edit</button>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };
