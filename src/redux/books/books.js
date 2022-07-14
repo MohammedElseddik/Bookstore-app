@@ -1,7 +1,21 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-let initailState = [];
+let initailState = [
+  {
+    id: 'book4',
+    title: 'The Redux Books',
+    author: 'Suzanne Collins',
+    category: 'Action',
+  },
+
+  {
+    id: 'book5',
+    title: 'The React Books',
+    author: 'Frank Herbert',
+    category: 'Science Fiction',
+  },
+];
 
 export const addBookAction = (book) => ({
   type: ADD_BOOK,
