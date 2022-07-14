@@ -3,14 +3,12 @@ const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 let initailState = [
   {
-    id: 'book4',
     title: 'The Redux Books',
     author: 'Suzanne Collins',
     category: 'Action',
   },
 
   {
-    id: 'book5',
     title: 'The React Books',
     author: 'Frank Herbert',
     category: 'Science Fiction',
