@@ -15,7 +15,7 @@ const AddBookForm = () => {
     event.preventDefault();
 
     const dataInputs = {
-      id: uuidv4,
+      id: uuidv4(),
       title: book,
       author,
       category: 'Default',
