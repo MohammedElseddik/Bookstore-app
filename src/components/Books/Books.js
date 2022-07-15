@@ -5,7 +5,6 @@ import AddBookForm from '../AddBookForm/AddBookForm';
 
 const Books = () => {
   const addedBooks = useSelector((state) => state.book);
-  console.log('doupled', addedBooks);
 
   return (
     <div className="Books">
