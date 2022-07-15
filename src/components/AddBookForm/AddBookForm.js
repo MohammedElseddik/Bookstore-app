@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 
-import { addBookAction } from '../../redux/books/books';
+import { addBookApi } from '../../redux/books/books';
 
 const AddBookForm = () => {
   const [book, setBook] = useState('');
@@ -15,13 +15,13 @@ const AddBookForm = () => {
     event.preventDefault();
 
     const dataInputs = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title: book,
       author,
       category: 'Default',
     };
 
-    dispatch(addBookAction(dataInputs));
+    dispatch(addBookApi(dataInputs));
 
     setBook('');
     setAuthor('');
