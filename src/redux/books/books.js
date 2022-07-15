@@ -10,7 +10,7 @@ const initailState = [];
 export const addBookAction = (book) => ({
   type: ADD_BOOK,
   payload: {
-    item_id: book.id,
+    item_id: book.item_id,
     title: book.title,
     author: book.author,
     category: book.category,
@@ -48,6 +48,11 @@ export const addBookApi = (book) => async (dispatch) => {
   dispatch(addBookAction(book));
 };
 
+export const removeBookApi = (id) => async (dispatch) => {
+  await axios.delete(`${beaseUrl}books/${id}`);
+  dispatch(removBookAction(id));
+};
+
 const bookReducer = (state = initailState, action) => {
   let books;
   switch (action.type) {
@@ -55,7 +60,7 @@ const bookReducer = (state = initailState, action) => {
       books = [
         ...state,
         {
-          id: action.payload.id,
+          item_id: action.payload.item_id,
           title: action.payload.title,
           author: action.payload.author,
           category: action.payload.category,

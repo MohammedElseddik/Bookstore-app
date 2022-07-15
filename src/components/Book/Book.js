@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removBookAction } from '../../redux/books/books';
+import { removeBookApi } from '../../redux/books/books';
 
 const Book = (props) => {
   const {
@@ -10,7 +10,7 @@ const Book = (props) => {
   const dispatch = useDispatch();
 
   const removeBookHandler = () => {
-    dispatch(removBookAction(id));
+    dispatch(removeBookApi(id));
   };
 
   return (
