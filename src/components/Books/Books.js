@@ -6,18 +6,15 @@ import AddBookForm from '../AddBookForm/AddBookForm';
 
 const Books = () => {
   const addedBooks = useSelector((state) => state.book);
-  console.log(addedBooks);
+
+  console.log('addedbook', addedBooks);
 
   return (
     <div className="Books">
-      {addedBooks.map((book) => (
-        <Book
-          key={uuidv4}
-          bookTile={book.title}
-          bookAuthor={book.author}
-          bookCategory={book.category}
-        />
-      ))}
+      {addedBooks.map((book) => {
+        console.log(book);
+        return <Book key={uuidv4} {...book} />;
+      })}
 
       <AddBookForm />
     </div>

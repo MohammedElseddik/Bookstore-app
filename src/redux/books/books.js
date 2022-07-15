@@ -1,7 +1,7 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
-let initailState = [
+const initailState = [
   {
     title: 'The Redux Books',
     author: 'Suzanne Collins',
@@ -32,9 +32,10 @@ export const removBookAction = (id) => ({
 });
 
 const bookReducer = (state = initailState, action) => {
+  let books;
   switch (action.type) {
     case ADD_BOOK:
-      initailState = [
+      books = [
         ...state,
         {
           title: action.payload.title,
@@ -42,11 +43,11 @@ const bookReducer = (state = initailState, action) => {
           category: action.payload.category,
         },
       ];
-      return initailState;
+      return books;
 
     case REMOVE_BOOK:
-      initailState = state.filter((book) => book.id !== action.payload.id);
-      return initailState;
+      books = state.filter((book) => book.id !== action.payload.id);
+      return books;
 
     default:
       return state;
