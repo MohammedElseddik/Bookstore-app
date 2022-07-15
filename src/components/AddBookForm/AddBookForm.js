@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 
 import { addBookAction } from '../../redux/books/books';
@@ -10,29 +11,28 @@ const AddBookForm = () => {
 
   const dispatch = useDispatch();
 
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+
+    const dataInputs = {
+      id: uuidv4,
+      title: book,
+      author,
+      category: 'Default',
+    };
+
+    dispatch(addBookAction(dataInputs));
+
+    setBook('');
+    setAuthor('');
+  };
+
   const titleInputHandler = (event) => {
     setBook(event.target.value.trim());
   };
 
   const authorInputHandler = (event) => {
     setAuthor(event.target.value.trim());
-  };
-
-  const formSubmitHandler = (event) => {
-    event.preventDefault();
-
-    const dataInputs = {
-      title: book,
-      author,
-      category: 'Default',
-    };
-
-    console.log('titie,author inputs', dataInputs);
-
-    dispatch(addBookAction(dataInputs));
-
-    setBook('');
-    setAuthor('');
   };
 
   return (
