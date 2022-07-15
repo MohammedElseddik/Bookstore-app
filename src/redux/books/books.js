@@ -3,8 +3,7 @@ import axios from 'axios';
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
-const beaseUrl =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/qLsFjmbcj4drPI4jG9EK/';
+const beaseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/qLsFjmbcj4drPI4jG9EK/';
 
 const initailState = [];
 
