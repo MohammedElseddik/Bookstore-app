@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import CircularProgress from '@mui/material/CircularProgress';
 import { removeBookApi } from '../../redux/books/books';
+
+import './book.css';
 
 const Book = (props) => {
   const {
@@ -15,21 +18,51 @@ const Book = (props) => {
 
   return (
     <div className="book">
-      <span>{category}</span>
-      <h3>{title}</h3>
-      <span>{author}</span>
-      <div className="buttons">
-        <div className="btn">
-          <button type="button">Comments</button>
+      <div className="book-details">
+        <p className="category">{category}</p>
+        <h2 className="title">{title}</h2>
+        <p className="author">{author}</p>
+        <ul className="action-buttons">
+          <li>
+            <button type="button" className="btn btn-comments">
+              Comments
+            </button>
+          </li>
+          <li>
+            <button onClick={removeBookHandler} type="button" className="btn">
+              Remove
+            </button>
+          </li>
+          <li>
+            <button type="button" className="btn">
+              Edit
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div className="book-status">
+        <CircularProgress
+          sx={{
+            color: '#0290ff',
+          }}
+          size={75}
+          variant="determinate"
+          value={65}
+        />
+
+        <div className="complete-status">
+          <span className="percent">64%</span>
+          <p className="text-gray">Completed</p>
         </div>
-        <div className="btn">
-          <button type="button" onClick={removeBookHandler}>
-            Remove
-          </button>
+      </div>
+      <div className="book-chapter">
+        <div className="chapter-title">
+          <p className="chapter">CURRENT CHAPTER</p>
+          <p className="chapter-title">Chapter 17</p>
         </div>
-        <div className="btn">
-          <button type="button">Edit</button>
-        </div>
+        <button type="button" className="btn btn--primary">
+          UPDAE PROGRESS
+        </button>
       </div>
     </div>
   );

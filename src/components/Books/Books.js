@@ -14,7 +14,7 @@ const Books = () => {
   }, []);
 
   return (
-    <div className="Books">
+    <div className="books">
       {addedBooks.map((book) => (
         <Book
           key={book.item_id}
