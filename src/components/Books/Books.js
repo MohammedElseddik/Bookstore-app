@@ -4,6 +4,8 @@ import Book from '../Book/Book';
 import AddBookForm from '../AddBookForm/AddBookForm';
 import { fetchBookApiAction } from '../../redux/books/books';
 
+import './books.css';
+
 const Books = () => {
   const addedBooks = useSelector((state) => state.book);
 
@@ -14,7 +16,7 @@ const Books = () => {
   }, []);
 
   return (
-    <div className="Books">
+    <div className="books">
       {addedBooks.map((book) => (
         <Book
           key={book.item_id}
