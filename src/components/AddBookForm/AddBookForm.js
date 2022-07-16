@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import { addBookApi } from '../../redux/books/books';
 
+import './addBookForm.css';
+
 const AddBookForm = () => {
   const [book, setBook] = useState('');
 
@@ -36,28 +38,34 @@ const AddBookForm = () => {
   };
 
   return (
-    <form className="add-book" onSubmit={formSubmitHandler}>
+    <div className="form">
       <div className="add-book__header">
         <h3> ADD NEW BOOK</h3>
       </div>
-      <div className="add-book__controls">
-        <input
-          value={book}
-          type="text"
-          placeholder="Book title"
-          onChange={titleInputHandler}
-        />
-        <input
-          value={author}
-          type="text"
-          placeholder="Author"
-          onChange={authorInputHandler}
-        />
-      </div>
-      <div className="add-book__actions">
-        <button type="submit">ADD BOOK</button>
-      </div>
-    </form>
+      <form className="add-book-form" onSubmit={formSubmitHandler}>
+        <div className="add-book__controls">
+          <input
+            className="title-input"
+            value={book}
+            type="text"
+            placeholder="Book title"
+            onChange={titleInputHandler}
+            required
+          />
+          <input
+            className="author-input"
+            value={author}
+            type="text"
+            placeholder="Author"
+            onChange={authorInputHandler}
+            required
+          />
+          <button className="submit-btn" type="submit">
+            ADD BOOK
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
