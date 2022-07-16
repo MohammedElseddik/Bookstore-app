@@ -1,0 +1,30 @@
+.nav-header {
+  padding: 1.5rem 3rem;
+  border: solid 1px #e8e8e8;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-icon {
+  color: rgb(107, 172, 224);
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item a {
+  margin: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.user-icon {
+  width: 44px;
+}
