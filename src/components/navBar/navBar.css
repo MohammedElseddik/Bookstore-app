@@ -1,6 +1,6 @@
 .nav-header {
-  padding: 1.5rem 3rem;
-  border: solid 1px #e8e8e8;
+  padding: 1.5rem 5rem;
+  border: solid 1px #e7e7e7;
 }
 
 .navbar {
@@ -25,6 +25,13 @@
   color: black;
 }
 
+.icon-container {
+  border: solid 1px #e7e7e7;
+  border-radius: 50%;
+  padding: 5px;
+}
+
 .user-icon {
   width: 44px;
+  fill: rgb(107, 172, 224);
 }
